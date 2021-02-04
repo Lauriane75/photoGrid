@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B5DD83625CC7A5700F162CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DD83525CC7A5700F162CA /* Constants.swift */; };
+		5B5DD83A25CC7C6000F162CA /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DD83925CC7C6000F162CA /* Manager.swift */; };
+		5B5F8A9725CAC9240060D09E /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B5F8A9625CAC9170060D09E /* ThirstySoftRegular.otf */; };
+		5B5F8A9E25CB0CBE0060D09E /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B5F8A9D25CB0CBE0060D09E /* Delm-Medium.otf */; };
 		F6325CFA25CA9A1300A90CF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6325CF925CA9A1300A90CF8 /* AppDelegate.swift */; };
 		F6325CFE25CA9A1300A90CF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6325CFD25CA9A1300A90CF8 /* ViewController.swift */; };
 		F6325D0325CA9A1800A90CF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6325D0225CA9A1800A90CF8 /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B5DD83525CC7A5700F162CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B5DD83925CC7C6000F162CA /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		5B5F8A9625CAC9170060D09E /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		5B5F8A9D25CB0CBE0060D09E /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		F6325CF625CA9A1300A90CF8 /* photoGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6325CF925CA9A1300A90CF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6325CFD25CA9A1300A90CF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +41,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B5F8A9525CAC8C40060D09E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6325CF925CA9A1300A90CF8 /* AppDelegate.swift */,
+				5B5F8A9625CAC9170060D09E /* ThirstySoftRegular.otf */,
+				5B5F8A9D25CB0CBE0060D09E /* Delm-Medium.otf */,
+				F6325D0425CA9A1800A90CF8 /* LaunchScreen.storyboard */,
+				F6325D0225CA9A1800A90CF8 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B5F8AA025CB0D080060D09E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6325CFD25CA9A1300A90CF8 /* ViewController.swift */,
+				5B5DD83525CC7A5700F162CA /* Constants.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B5F8AA125CB0D110060D09E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B5DD83925CC7C6000F162CA /* Manager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F6325CED25CA9A1300A90CF8 = {
 			isa = PBXGroup;
 			children = (
@@ -52,10 +89,9 @@
 		F6325CF825CA9A1300A90CF8 /* photoGrid */ = {
 			isa = PBXGroup;
 			children = (
-				F6325CF925CA9A1300A90CF8 /* AppDelegate.swift */,
-				F6325CFD25CA9A1300A90CF8 /* ViewController.swift */,
-				F6325D0225CA9A1800A90CF8 /* Assets.xcassets */,
-				F6325D0425CA9A1800A90CF8 /* LaunchScreen.storyboard */,
+				5B5F8A9525CAC8C40060D09E /* Supporting Files */,
+				5B5F8AA125CB0D110060D09E /* Model */,
+				5B5F8AA025CB0D080060D09E /* Controller */,
 				F6325D0725CA9A1800A90CF8 /* Info.plist */,
 			);
 			path = photoGrid;
@@ -88,7 +124,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Lauriane Haydari";
 				TargetAttributes = {
 					F6325CF525CA9A1300A90CF8 = {
@@ -119,7 +155,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5F8A9725CAC9240060D09E /* ThirstySoftRegular.otf in Resources */,
 				F6325D0625CA9A1800A90CF8 /* LaunchScreen.storyboard in Resources */,
+				5B5F8A9E25CB0CBE0060D09E /* Delm-Medium.otf in Resources */,
 				F6325D0325CA9A1800A90CF8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +171,8 @@
 			files = (
 				F6325CFE25CA9A1300A90CF8 /* ViewController.swift in Sources */,
 				F6325CFA25CA9A1300A90CF8 /* AppDelegate.swift in Sources */,
+				5B5DD83625CC7A5700F162CA /* Constants.swift in Sources */,
+				5B5DD83A25CC7C6000F162CA /* Manager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +216,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -236,6 +277,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
