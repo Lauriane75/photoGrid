@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Photos
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Outlets
     
@@ -39,6 +40,8 @@ class ViewController: UIViewController {
     
     var manager = Manager.shared
     private var data: [Data] = []
+    var finalPhoto: UIImage? = nil
+    var button: UIButton? = nil
 
     // MARK: - Initializer
 
@@ -100,7 +103,7 @@ class ViewController: UIViewController {
     }
     
     @objc func didPressDownRightButton(_ sender: UIButton) {
-        addPhotoUpRight()
+        addPhotoDownRight()
     }
     
     @objc func didPressDownLargeButton(_ sender: UIButton) {
@@ -125,7 +128,6 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setPhotoContentMode2() {
-
         mode2SelectionImageView.isHidden = false
         mode3SelectionImageView.isHidden = true
         mode1SelectionImageView.isHidden = true
@@ -155,27 +157,143 @@ class ViewController: UIViewController {
     }
     
     fileprivate func addPhotoUpLeft() {
-        print("addPhotoUpLeft")
+        button = plusUpLeftButton
+        addPhoto()
     }
     
     fileprivate func addPhotoUpRight() {
-        print("addPhotoUpRight")
+        button = plusUpRightButton
+        addPhoto()
     }
     
     fileprivate func addPhotoUpLarge() {
-        print("addPhotoUpLarge")
+        button = plusUpLargeButton
+        addPhoto()
     }
     
     fileprivate func addPhotoDownLeft() {
-        print("addPhotoDownLeft")
+        button = plusDownLeftButton
+        addPhoto()
     }
     
     fileprivate func addPhotoDownRight() {
-        print("addPhotoDownRight")
+        button = plusDownRightButton
+        addPhoto()
+        
     }
     
     fileprivate func addPhotoDownLarge() {
-        print("addPhotoDownLarge")
+        button = plusDownLargeButton
+        addPhoto()
+    }
+    
+    func checkMode1() -> Bool {
+        return plusUpLargeButton.image(for: .normal) != UIImage(named: "plus") &&
+            plusDownLeftButton.image(for: .normal) != UIImage(named: "plus") &&
+            plusDownRightButton.image(for: .normal) != UIImage(named: "plus")
+    }
+    
+    func checkMode2() -> Bool {
+        return plusUpLeftButton.image(for: .normal) != UIImage(named: "plus") &&
+            plusUpRightButton.image(for: .normal) != UIImage(named: "plus") &&
+            plusDownLargeButton.image(for: .normal) != UIImage(named: "plus")
+    }
+    
+    func checkMode3() -> Bool {
+        return plusUpLeftButton.image(for: .normal) != UIImage(named: "plus") &&
+        plusUpRightButton.image(for: .normal) != UIImage(named: "plus") &&
+        plusDownLeftButton.image(for: .normal) != UIImage(named: "plus") &&
+        plusDownRightButton.image(for: .normal) != UIImage(named: "plus")
+    }
+    
+    // Add photo
+    
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        
+        guard button != nil else { return }
+        
+        if let image = info[.editedImage] as? UIImage {
+            self.button!.setImage(image, for: .normal)
+        } else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.button!.setImage(image, for: .normal)
+        }
+        dismiss(animated: true)
+    }
+    
+    fileprivate func photoPickerController() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        self.present(imagePickerController, animated: true)
+        imagePickerController.allowsEditing = true
+    }
+    
+    private func addPhoto() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        let actionSheet = UIAlertController(title: "📸", message: "Choose a photo in your library or create one using camera ", preferredStyle: .actionSheet)
+        // Camera access
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            } else {
+                print ("Camera not available")
+            }
+        }))
+        // Photo Library access
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                PHPhotoLibrary.requestAuthorization { (status) in
+                    switch status {
+                    case .authorized:
+                        DispatchQueue.main.async {
+                            self.photoPickerController()
+                        }
+                    case .notDetermined:
+                        self.notDeterminedCase(status)
+                    case .restricted:
+                        self.restrictedCase()
+                    case .denied:
+                        self.deniedCase()
+                    default:break
+                        
+                    }
+                }
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    // Accessibility Cases
+    
+    // func in case resticted
+    fileprivate func restrictedCase() {
+        let alert = UIAlertController(title: "Photo library restricted", message: "Photo library acces is restriced and can't be accessed", preferredStyle: .alert)
+        let okAction = UIAlertAction(title : "OK", style: .default)
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+    }
+    // func in case not determined
+    fileprivate func notDeterminedCase(_ status: PHAuthorizationStatus) {
+        if status == PHAuthorizationStatus.authorized{
+            self.photoPickerController()
+        }
+    }
+    //func in case denied
+    fileprivate func deniedCase() {
+        let alert = UIAlertController(title: "Photo library denied", message: "Photo library acces was denied and can't be accessed. Please update your settings if you want to change it", preferredStyle: .alert)
+        let goToSettings = UIAlertAction(title : "Go to your settings", style: .default) { (action) in
+            DispatchQueue.main.async {
+                let url = URL(string: UIApplication.openSettingsURLString)!
+                UIApplication.shared.open(url, options:[:])
+            }
+        }
+        let cancelAction = UIAlertAction(title:"Cancel", style: .cancel)
+        alert.addAction(goToSettings)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
     }
 
 }
