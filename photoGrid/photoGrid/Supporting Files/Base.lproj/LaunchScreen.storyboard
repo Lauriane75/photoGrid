@@ -39,7 +39,7 @@
     <resources>
         <image name="instagrid-icon" width="289" height="289"/>
         <namedColor name="blue-dark">
-            <color red="0.23137254901960785" green="0.40000000000000002" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.22200000286102295" green="0.40400004386901855" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
