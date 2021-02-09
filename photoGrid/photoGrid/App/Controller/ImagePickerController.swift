@@ -33,6 +33,8 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
     }
     
     func addPhoto(button: UIButton) {
+        let alert = Alert()
+
         self.button = button
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self

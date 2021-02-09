@@ -81,7 +81,6 @@
 			children = (
 				5B5DD83925CC7C6000F162CA /* Manager.swift */,
 				5B0D409A25CF41B3003E13D4 /* Alert.swift */,
-				5B0D409D25CF4201003E13D4 /* Animation.swift */,
 				5BFBEC2A25D19D7900FC2AF3 /* SelectedMode.swift */,
 			);
 			path = Model;
@@ -101,9 +100,10 @@
 		5BFBEC2525D185DF00FC2AF3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5B0D40A025CF4247003E13D4 /* Constraints.swift */,
-				5B0D40A325CF434B003E13D4 /* Outlets.swift */,
 				5B27C4E725D0919F00BAA4E9 /* Implements.swift */,
+				5B0D40A325CF434B003E13D4 /* Outlets.swift */,
+				5B0D40A025CF4247003E13D4 /* Constraints.swift */,
+				5B0D409D25CF4201003E13D4 /* Animation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

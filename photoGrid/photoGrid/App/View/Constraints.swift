@@ -137,12 +137,7 @@ extension ViewController {
             mode1Button.bottomAnchor.constraint(equalTo: selectedModeHStackView.bottomAnchor, constant: 0),
             mode1Button.topAnchor.constraint(equalTo: selectedModeHStackView.topAnchor, constant: 0),
             mode1Button.leadingAnchor.constraint(equalTo: selectedModeHStackView.leadingAnchor, constant: 0),
-            mode1Button.widthAnchor.constraint(equalTo: selectedModeHStackView.widthAnchor, multiplier: 0.3, constant: 0),
-            
-            mode1SelectionImageView.bottomAnchor.constraint(equalTo: mode1Button.imageView!.bottomAnchor, constant: 0),
-            mode1SelectionImageView.topAnchor.constraint(equalTo: mode1Button.imageView!.topAnchor, constant: 0),
-            mode1SelectionImageView.leadingAnchor.constraint(equalTo: mode1Button.imageView!.leadingAnchor, constant: 0),
-            mode1SelectionImageView.trailingAnchor.constraint(equalTo: mode1Button.imageView!.trailingAnchor, constant: 0)
+            mode1Button.widthAnchor.constraint(equalTo: selectedModeHStackView.widthAnchor, multiplier: 0.3, constant: 0)
         ])
     }
     
@@ -151,12 +146,7 @@ extension ViewController {
             mode2Button.bottomAnchor.constraint(equalTo: selectedModeHStackView.bottomAnchor, constant: 0),
             mode2Button.topAnchor.constraint(equalTo: selectedModeHStackView.topAnchor, constant: 0),
             mode2Button.centerXAnchor.constraint(equalTo: selectedModeHStackView.centerXAnchor),
-            mode2Button.widthAnchor.constraint(equalTo: selectedModeHStackView.widthAnchor, multiplier: 0.3, constant: 0),
-            
-            mode2SelectionImageView.bottomAnchor.constraint(equalTo: mode2Button.imageView!.bottomAnchor, constant: 0),
-            mode2SelectionImageView.topAnchor.constraint(equalTo: mode2Button.imageView!.topAnchor, constant: 0),
-            mode2SelectionImageView.leadingAnchor.constraint(equalTo: mode2Button.imageView!.leadingAnchor, constant: 0),
-            mode2SelectionImageView.trailingAnchor.constraint(equalTo: mode2Button.imageView!.trailingAnchor, constant: 0)
+            mode2Button.widthAnchor.constraint(equalTo: selectedModeHStackView.widthAnchor, multiplier: 0.3, constant: 0)
         ])
     }
     
@@ -165,12 +155,17 @@ extension ViewController {
             mode3Button.bottomAnchor.constraint(equalTo: selectedModeHStackView.bottomAnchor, constant: 0),
             mode3Button.topAnchor.constraint(equalTo: selectedModeHStackView.topAnchor, constant: 0),
             mode3Button.trailingAnchor.constraint(equalTo: selectedModeHStackView.trailingAnchor, constant: 0),
-            mode3Button.widthAnchor.constraint(equalTo: selectedModeHStackView.widthAnchor, multiplier: 0.3, constant: 0),
-            
-            mode3SelectionImageView.bottomAnchor.constraint(equalTo: mode3Button.imageView!.bottomAnchor, constant: 0),
-            mode3SelectionImageView.topAnchor.constraint(equalTo: mode3Button.imageView!.topAnchor, constant: 0),
-            mode3SelectionImageView.leadingAnchor.constraint(equalTo: mode3Button.imageView!.leadingAnchor, constant: 0),
-            mode3SelectionImageView.trailingAnchor.constraint(equalTo: mode3Button.imageView!.trailingAnchor, constant: 0)
+            mode3Button.widthAnchor.constraint(equalTo: selectedModeHStackView.widthAnchor, multiplier: 0.3, constant: 0)
         ])
     }
+    
+    func selectionImageViewConstraints(selectionImageView: UIImageView, modeButton: UIButton) {
+        NSLayoutConstraint.activate([
+            selectionImageView.bottomAnchor.constraint(equalTo: modeButton.imageView!.bottomAnchor, constant: 0),
+            selectionImageView.topAnchor.constraint(equalTo: modeButton.imageView!.topAnchor, constant: 0),
+            selectionImageView.leadingAnchor.constraint(equalTo: modeButton.imageView!.leadingAnchor, constant: 0),
+            selectionImageView.trailingAnchor.constraint(equalTo: modeButton.imageView!.trailingAnchor, constant: 0)
+        ])
+    }
+
 }

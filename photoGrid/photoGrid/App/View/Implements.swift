@@ -78,21 +78,24 @@ extension ViewController {
         
         // mode1Button
         mode1Button = returnButton(image: Constants.selected1Image, background: .clear)
-        mode1SelectionImageView = returnImageView(image: Constants.selection)
         mode1Button.addTarget(self, action: #selector(didSelectMode1Button), for: .touchUpInside)
         mode1ButtonConstraints()
+        mode1SelectionImageView = returnImageView(image: Constants.selection)
+        selectionImageViewConstraints(selectionImageView: mode1SelectionImageView, modeButton: mode1Button)
         
         // mode2Button
         mode2Button = returnButton(image: Constants.selected2Image, background: .clear)
-        mode2SelectionImageView = returnImageView(image: Constants.selection)
         mode2Button.addTarget(self, action: #selector(didSelectMode2Button), for: .touchUpInside)
         mode2ButtonConstraints()
+        mode2SelectionImageView = returnImageView(image: Constants.selection)
+        selectionImageViewConstraints(selectionImageView: mode2SelectionImageView, modeButton: mode2Button)
         
         // mode3Button
         mode3Button = returnButton(image: Constants.selected3Image, background: .clear)
-        mode3SelectionImageView = returnImageView(image: Constants.selection)
         mode3Button.addTarget(self, action: #selector(didSelectMode3Button), for: .touchUpInside)
         mode3ButtonConstraints()
+        mode3SelectionImageView = returnImageView(image: Constants.selection)
+        selectionImageViewConstraints(selectionImageView: mode3SelectionImageView, modeButton: mode3Button)
     }
 }
 
