@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Constraints
 
-extension ViewController {
+extension HomeViewController {
     
     func titleLabelConstraints() {
         NSLayoutConstraint.activate([

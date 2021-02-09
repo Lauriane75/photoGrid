@@ -9,7 +9,7 @@
 import UIKit
 
 class Animation {
-    func animationDone(viewController : ViewController) {
+    func animationDone(viewController : HomeViewController) {
         UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options:[] , animations: {
             viewController.photoContentStackView.transform = .identity
             viewController.upHStackView.transform = .identity
@@ -24,7 +24,7 @@ class Animation {
         } , completion: nil )
     }
     
-    func swipeAnimation(viewController : ViewController) {
+    func swipeAnimation(viewController : HomeViewController) {
         let swipePortrait = CGAffineTransform(translationX: 0, y: -viewController.view.frame.height * 0.3)
             UIView.animate(withDuration: 0.4, animations: {
                 viewController.photoContentStackView.transform = swipePortrait

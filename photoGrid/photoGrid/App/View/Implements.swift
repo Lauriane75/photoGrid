@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - Implement Outlets
 
-extension ViewController {
+extension HomeViewController {
     func implementOutlets() {
         view.backgroundColor = Constants.blueLight
         

@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Return Outlets
 
-extension ViewController {
+extension HomeViewController {
     
     func returnLabel(tintColor: UIColor = .white, font: UIFont, text: String) -> UILabel {
         let label: UILabel = {

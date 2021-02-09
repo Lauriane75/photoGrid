@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+extension HomeViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     // Add photo
     

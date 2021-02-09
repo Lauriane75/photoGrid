@@ -11,7 +11,7 @@ import Photos
 
 // Alert if an image is missing in the grid before saving
 class Alert {
-    func missingImage(viewController : ViewController) {
+    func missingImage(viewController : HomeViewController) {
         let imageAlert = UIAlertController(title: "⚠️ Please complete the grid with missing images to share!", message: "", preferredStyle: .alert)
         imageAlert.addAction(UIAlertAction(title: "Got it 👍", style: .default))
         viewController.present(imageAlert, animated: true)
@@ -25,14 +25,14 @@ class Alert {
         }))
     }
     
-    func restrictedCase(viewController : ViewController) {
+    func restrictedCase(viewController : HomeViewController) {
         let alert = UIAlertController(title: "Photo library restricted", message: "Photo library acces is restriced and can't be accessed", preferredStyle: .alert)
         let okAction = UIAlertAction(title : "OK", style: .default)
         alert.addAction(okAction)
         viewController.present(alert, animated: true)
     }
     
-    func deniedCase(viewController : ViewController) {
+    func deniedCase(viewController : HomeViewController) {
         let alert = UIAlertController(title: "Photo library denied", message: "Photo library acces was denied and can't be accessed. Please update your settings if you want to change it", preferredStyle: .alert)
         let goToSettings = UIAlertAction(title : "Go to your settings", style: .default) { (action) in
             DispatchQueue.main.async {
@@ -46,13 +46,13 @@ class Alert {
         viewController.present(alert, animated: true)
     }
     
-    func notDeterminedCase(_ status: PHAuthorizationStatus, viewController : ViewController) {
+    func notDeterminedCase(_ status: PHAuthorizationStatus, viewController : HomeViewController) {
         if status == PHAuthorizationStatus.authorized{
             viewController.imagePickerController()
         }
     }
     
-    func libraryOrCameraSource(viewController : ViewController, imagePickerController: UIImagePickerController) {
+    func libraryOrCameraSource(viewController : HomeViewController, imagePickerController: UIImagePickerController) {
         let actionSheet = UIAlertController(title: "📸", message: "Choose a photo in your library or create one using camera ", preferredStyle: .actionSheet)
         // Camera access
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
