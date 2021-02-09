@@ -28,8 +28,8 @@ extension ViewController: UINavigationControllerDelegate, UIImagePickerControlle
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
-        self.present(imagePickerController, animated: true)
         imagePickerController.allowsEditing = true
+        self.present(imagePickerController, animated: true)
     }
     
     func addPhoto(button: UIButton) {
