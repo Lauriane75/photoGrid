@@ -7,21 +7,31 @@
 //
 
 import Foundation
+import UIKit
 
-struct Data: Decodable {
+struct Datas: Decodable {
     let title: String
     let swipeText: String
+    let imageText: [String]
 }
 
 class Manager {
     
     static let shared = Manager()
     
-    private var data: [Data] = []
-    
-    func getData() -> [Data] {
-        data = [Data(title: "Photogrid", swipeText: "Swipe up to share")]
-        return data
-    }
-}
+    private var datas: [Datas] = []
+    private var imagesString: [String] = []
 
+    func getData() -> [Datas] {
+        datas = [Datas(title: "Photogrid", swipeText: "Swipe up to share", imageText: imagesString)]
+        return datas
+    }
+    
+    func saveImages(imagesString: [String]) {
+        self.imagesString = imagesString
+    }
+    
+//    func getImages() -> [String] {
+//        return imagesString
+//    }
+}

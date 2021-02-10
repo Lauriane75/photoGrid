@@ -10,18 +10,20 @@ import UIKit
 
 // MARK: - Constraints
 
-extension HomeViewController {
+class Constraints {
     
-    func titleLabelConstraints() {
+    // MARK: - HomeViewController
+    
+    func titleLabelConstraints(label: UILabel, view: UIView) {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.12)
+            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            label.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.12)
         ])
     }
     
-    func arrowUpImageViewConstraints() {
+    func arrowUpImageViewConstraints(arrowUpImageView: UIImageView, titleLabel: UILabel, view: UIView) {
         NSLayoutConstraint.activate([
             arrowUpImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             arrowUpImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -30,7 +32,7 @@ extension HomeViewController {
         ])
     }
     
-    func swipeUpLabelConstraints() {
+    func swipeUpLabelConstraints(swipeUpLabel: UILabel, arrowUpImageView: UIImageView, view: UIView) {
         NSLayoutConstraint.activate([
             swipeUpLabel.topAnchor.constraint(equalTo: arrowUpImageView.bottomAnchor, constant: 10),
             swipeUpLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -38,7 +40,7 @@ extension HomeViewController {
         ])
     }
     
-    func photoContentStackViewConstraints() {
+    func photoContentStackViewConstraints(photoContentStackView: UIStackView, swipeUpLabel: UILabel, view: UIView) {
         NSLayoutConstraint.activate([
             photoContentStackView.topAnchor.constraint(equalTo: swipeUpLabel.bottomAnchor, constant: 15),
             photoContentStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -47,7 +49,7 @@ extension HomeViewController {
         ])
     }
     
-    func upHStackViewConstraints() {
+    func upHStackViewConstraints(upHStackView: UIStackView, photoContentStackView: UIStackView) {
         NSLayoutConstraint.activate([
             upHStackView.topAnchor.constraint(equalTo: photoContentStackView.topAnchor, constant: 10),
             upHStackView.leadingAnchor.constraint(equalTo: photoContentStackView.leadingAnchor, constant: 10),
@@ -56,7 +58,7 @@ extension HomeViewController {
         ])
     }
     
-    func plusUpLeftButtonConstraints() {
+    func plusUpLeftButtonConstraints(plusUpLeftButton: UIButton, upHStackView: UIStackView) {
         NSLayoutConstraint.activate([
             plusUpLeftButton.topAnchor.constraint(equalTo: upHStackView.topAnchor, constant: 0),
             plusUpLeftButton.bottomAnchor.constraint(equalTo: upHStackView.bottomAnchor, constant: 0),
@@ -65,7 +67,7 @@ extension HomeViewController {
         ])
     }
     
-    func plusUpRightButtonConstraints() {
+    func plusUpRightButtonConstraints(plusUpRightButton: UIButton, upHStackView: UIStackView) {
         NSLayoutConstraint.activate([
             plusUpRightButton.topAnchor.constraint(equalTo: upHStackView.topAnchor, constant: 0),
             plusUpRightButton.bottomAnchor.constraint(equalTo: upHStackView.bottomAnchor, constant: 0),
@@ -74,7 +76,7 @@ extension HomeViewController {
         ])
     }
     
-    func plusUpLargeButtonConstraints() {
+    func plusUpLargeButtonConstraints(plusUpLargeButton: UIButton, upHStackView: UIStackView) {
         NSLayoutConstraint.activate([
             plusUpLargeButton.topAnchor.constraint(equalTo: upHStackView.topAnchor, constant: 0),
             plusUpLargeButton.bottomAnchor.constraint(equalTo: upHStackView.bottomAnchor, constant: 0),
@@ -83,7 +85,7 @@ extension HomeViewController {
         ])
     }
     
-    func downHStackViewConstraints() {
+    func downHStackViewConstraints(downHStackView: UIStackView, photoContentStackView: UIStackView) {
         NSLayoutConstraint.activate([
             downHStackView.bottomAnchor.constraint(equalTo: photoContentStackView.bottomAnchor, constant: -10),
             downHStackView.leadingAnchor.constraint(equalTo: photoContentStackView.leadingAnchor, constant: 10),
@@ -92,7 +94,7 @@ extension HomeViewController {
         ])
     }
     
-    func plusDownLeftButtonConstraints() {
+    func plusDownLeftButtonConstraints(plusDownLeftButton: UIButton, downHStackView: UIStackView) {
         NSLayoutConstraint.activate([
             plusDownLeftButton.topAnchor.constraint(equalTo: downHStackView.topAnchor, constant: 0),
             plusDownLeftButton.bottomAnchor.constraint(equalTo: downHStackView.bottomAnchor, constant: 0),
@@ -101,7 +103,7 @@ extension HomeViewController {
         ])
     }
     
-    func plusDownRightButtonConstraints() {
+    func plusDownRightButtonConstraints(plusDownRightButton: UIButton, downHStackView: UIStackView) {
         NSLayoutConstraint.activate([
             plusDownRightButton.topAnchor.constraint(equalTo: downHStackView.topAnchor, constant: 0),
             plusDownRightButton.bottomAnchor.constraint(equalTo: downHStackView.bottomAnchor, constant: 0),
@@ -110,7 +112,7 @@ extension HomeViewController {
         ])
     }
     
-    func plusDownLargeButtonButtonConstraints() {
+    func plusDownLargeButtonButtonConstraints(plusDownLargeButton: UIButton, downHStackView: UIStackView) {
         NSLayoutConstraint.activate([
             plusDownLargeButton.topAnchor.constraint(equalTo: downHStackView.topAnchor, constant: 0),
             plusDownLargeButton.bottomAnchor.constraint(equalTo: downHStackView.bottomAnchor, constant: 0),
@@ -119,8 +121,8 @@ extension HomeViewController {
         ])
     }
     
-    func selectedModeHStackViewConstraints() {
-        let selectedModeHStackViewWidth = self.view.frame.width - 40
+    func selectedModeHStackViewConstraints(view: UIView, selectedModeHStackView: UIStackView, photoContentStackView: UIStackView) {
+        let selectedModeHStackViewWidth = view.frame.width - 40
         let selectedModeHStackViewHeight = (selectedModeHStackViewWidth - selectedModeHStackViewWidth * 0.1) / 3
         let roomSpace = (1 - 0.62) * view.frame.height
         
@@ -132,7 +134,7 @@ extension HomeViewController {
         ])
     }
     
-    func mode1ButtonConstraints() {
+    func mode1ButtonConstraints(mode1Button: UIButton, selectedModeHStackView: UIStackView) {
         NSLayoutConstraint.activate([
             mode1Button.bottomAnchor.constraint(equalTo: selectedModeHStackView.bottomAnchor, constant: 0),
             mode1Button.topAnchor.constraint(equalTo: selectedModeHStackView.topAnchor, constant: 0),
@@ -141,7 +143,7 @@ extension HomeViewController {
         ])
     }
     
-    func mode2ButtonConstraints() {
+    func mode2ButtonConstraints(mode2Button: UIButton, selectedModeHStackView: UIStackView) {
         NSLayoutConstraint.activate([
             mode2Button.bottomAnchor.constraint(equalTo: selectedModeHStackView.bottomAnchor, constant: 0),
             mode2Button.topAnchor.constraint(equalTo: selectedModeHStackView.topAnchor, constant: 0),
@@ -150,7 +152,7 @@ extension HomeViewController {
         ])
     }
     
-    func mode3ButtonConstraints() {
+    func mode3ButtonConstraints(mode3Button: UIButton, selectedModeHStackView: UIStackView) {
         NSLayoutConstraint.activate([
             mode3Button.bottomAnchor.constraint(equalTo: selectedModeHStackView.bottomAnchor, constant: 0),
             mode3Button.topAnchor.constraint(equalTo: selectedModeHStackView.topAnchor, constant: 0),
@@ -167,5 +169,18 @@ extension HomeViewController {
             selectionImageView.trailingAnchor.constraint(equalTo: modeButton.imageView!.trailingAnchor, constant: 0)
         ])
     }
+    
+    // MARK: - SavedViewController
+    
+    func collectionViewConstraints(view: UIView, collectionView: UICollectionView) {
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7, constant: 0),
+            collectionView.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8, constant: 0)
+        ])
+    }
 
+    
+    
 }

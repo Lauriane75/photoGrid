@@ -35,11 +35,13 @@ class HomeViewController: UIViewController {
     var mode1SelectionImageView: UIImageView!
     var mode2SelectionImageView: UIImageView!
     var mode3SelectionImageView: UIImageView!
+    
+    var images: [String] = []
 
     // MARK: - Properties
     
     var manager = Manager.shared
-    var data: [Data] = []
+    var datas: [Datas] = []
     var button: UIButton? = nil
     var select: SelectedMode = .mode3 {
         didSet {
@@ -60,10 +62,12 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
          super.viewDidLoad()
+                
+        datas = manager.getData()
         
-        data = manager.getData()
+        let createHomeViewOutlets = CreateHomeViewOutlets()
         
-        implementOutlets()
+        createHomeViewOutlets.implementOutlets(vc: self)
         
         setPhotoContentMode(imageViewMode1Hidden: true,
                             imageViewMode2Hidden: true,
@@ -186,6 +190,12 @@ class HomeViewController: UIViewController {
         
         guard finalPhoto != nil else { return }
         
+        let imageString = finalPhoto!.toString()
+        
+        images.append(imageString!)
+        
+        manager.saveImages(imagesString: images)
+        
         presentUiActivityController(finalPhoto: finalPhoto!)
     }
     
@@ -261,4 +271,3 @@ class HomeViewController: UIViewController {
         plusDownRightButton.image(for: .normal) != Constants.plusImage
     }
 }
-
