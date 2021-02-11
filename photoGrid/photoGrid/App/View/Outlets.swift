@@ -68,6 +68,9 @@ class Outlets {
         let imageView: UIImageView = {
             let imageView = UIImageView()
             imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.clipsToBounds = true
+            imageView.contentMode = .scaleToFill
+            imageView.layer.cornerRadius = 20
 
             return imageView
         }()

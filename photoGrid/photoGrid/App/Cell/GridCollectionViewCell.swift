@@ -24,6 +24,7 @@ class GridCollectionViewCell: UICollectionViewCell {
         let outlets = Outlets()
         label = outlets.returnLabel(font: Constants.thirstySoftRegular, text: "", view: contentView)
         imageView = outlets.returnImageView(view: contentView)
+
         contentView.clipsToBounds = true
     }
 
