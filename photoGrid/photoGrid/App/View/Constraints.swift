@@ -180,7 +180,31 @@ class Constraints {
             collectionView.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8, constant: 0)
         ])
     }
-
     
+    func returnlayoutFrame(view: UIView) -> CGSize {
+        let layoutFrame = CGSize(width: view.frame.size.width, height: view.frame.size.height * 0.8)
+        return layoutFrame
+    }
+    
+    func returnCollectionViewFrame(view: UIView) -> CGRect {
+        let collectionViewFrame = CGRect(x: Double(0), y: Double(view.frame.size.width * 0.35), width: Double(view.frame.size.width), height: Double(view.frame.size.height * 0.8))
+        return collectionViewFrame
+    }
+    
+    func returnLabelGridCollectionViewFrame(contentView: UIView) -> CGRect {
+        let labelFrame = CGRect(x: contentView.frame.size.width * 0.05,
+                                y: contentView.frame.size.height * 0.6,
+                                width: contentView.frame.size.width * 0.9,
+                                height: contentView.frame.size.height * 0.3)
+        return labelFrame
+    }
+    
+    func returnImageViewGridCollectionViewFrame(contentView: UIView) -> CGRect {
+        let imageViewFrame = CGRect(x: contentView.frame.size.width * 0.05,
+                                         y: contentView.frame.size.height * 0.05,
+                                         width: contentView.frame.size.width * 0.9,
+                                         height: contentView.frame.size.width * 0.9)
+        return imageViewFrame
+    }
     
 }

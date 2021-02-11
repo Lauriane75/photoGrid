@@ -19,6 +19,4 @@ class NavigationController: UINavigationController {
         navBar.tintColor = UIColor.white
 
     }
-
-
 }

@@ -30,8 +30,5 @@ class Manager {
     func saveImages(imagesString: [String]) {
         self.imagesString = imagesString
     }
-    
-//    func getImages() -> [String] {
-//        return imagesString
-//    }
+
 }

@@ -13,7 +13,7 @@
 		5B0D40A425CF434B003E13D4 /* Outlets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0D40A325CF434B003E13D4 /* Outlets.swift */; };
 		5B27C4E825D0919F00BAA4E9 /* CreateHomeViewOutlets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27C4E725D0919F00BAA4E9 /* CreateHomeViewOutlets.swift */; };
 		5B483C7725D3F9E6009D61B1 /* CreateSavedViewOutlets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B483C7625D3F9E6009D61B1 /* CreateSavedViewOutlets.swift */; };
-		5B483C7E25D412B7009D61B1 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B483C7D25D412B7009D61B1 /* CustomCollectionViewCell.swift */; };
+		5B483C7E25D412B7009D61B1 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B483C7D25D412B7009D61B1 /* GridCollectionViewCell.swift */; };
 		5B5DD83625CC7A5700F162CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DD83525CC7A5700F162CA /* Constants.swift */; };
 		5B5DD83A25CC7C6000F162CA /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5DD83925CC7C6000F162CA /* Manager.swift */; };
 		5B5F8A9725CAC9240060D09E /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B5F8A9625CAC9170060D09E /* ThirstySoftRegular.otf */; };
@@ -21,6 +21,7 @@
 		5B7AB5F125D2E6BB00377DD1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7AB5F025D2E6BB00377DD1 /* TabBarController.swift */; };
 		5B7AB5F825D2EE6B00377DD1 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7AB5F725D2EE6B00377DD1 /* NavigationController.swift */; };
 		5B7AB60225D2EF8200377DD1 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7AB60125D2EF8200377DD1 /* SavedViewController.swift */; };
+		5B969D3225D521C100042EB7 /* GridCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B969D3125D521C100042EB7 /* GridCollectionViewDataSource.swift */; };
 		5BC6908825D46893000777C4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6908725D46893000777C4 /* Extension.swift */; };
 		5BFBEC2B25D19D7900FC2AF3 /* SelectedMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBEC2A25D19D7900FC2AF3 /* SelectedMode.swift */; };
 		5BFBEC3B25D1AE9C00FC2AF3 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFBEC3A25D1AE9C00FC2AF3 /* ImagePickerController.swift */; };
@@ -37,7 +38,7 @@
 		5B0D40A325CF434B003E13D4 /* Outlets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlets.swift; sourceTree = "<group>"; };
 		5B27C4E725D0919F00BAA4E9 /* CreateHomeViewOutlets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHomeViewOutlets.swift; sourceTree = "<group>"; };
 		5B483C7625D3F9E6009D61B1 /* CreateSavedViewOutlets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSavedViewOutlets.swift; sourceTree = "<group>"; };
-		5B483C7D25D412B7009D61B1 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B483C7D25D412B7009D61B1 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B5DD83525CC7A5700F162CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B5DD83925CC7C6000F162CA /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		5B5F8A9625CAC9170060D09E /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 		5B7AB5F025D2E6BB00377DD1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5B7AB5F725D2EE6B00377DD1 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5B7AB60125D2EF8200377DD1 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		5B969D3125D521C100042EB7 /* GridCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		5BC6908725D46893000777C4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5BFBEC2A25D19D7900FC2AF3 /* SelectedMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMode.swift; sourceTree = "<group>"; };
 		5BFBEC3A25D1AE9C00FC2AF3 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
@@ -70,7 +72,8 @@
 		5B483C7C25D412A0009D61B1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				5B483C7D25D412B7009D61B1 /* CustomCollectionViewCell.swift */,
+				5B483C7D25D412B7009D61B1 /* GridCollectionViewCell.swift */,
+				5B969D3125D521C100042EB7 /* GridCollectionViewDataSource.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -119,8 +122,8 @@
 		5BFBEC2425D185CA00FC2AF3 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				5B7AB5FA25D2EE7100377DD1 /* Navigation */,
 				5B5DD83525CC7A5700F162CA /* Constants.swift */,
+				5B7AB5FA25D2EE7100377DD1 /* Navigation */,
 				5B5F8AA125CB0D110060D09E /* Model */,
 				5BFBEC2525D185DF00FC2AF3 /* View */,
 				5B5F8AA025CB0D080060D09E /* Controller */,
@@ -251,12 +254,13 @@
 				5B7AB5F125D2E6BB00377DD1 /* TabBarController.swift in Sources */,
 				5B483C7725D3F9E6009D61B1 /* CreateSavedViewOutlets.swift in Sources */,
 				5BC6908825D46893000777C4 /* Extension.swift in Sources */,
-				5B483C7E25D412B7009D61B1 /* CustomCollectionViewCell.swift in Sources */,
+				5B483C7E25D412B7009D61B1 /* GridCollectionViewCell.swift in Sources */,
 				5BFBEC3B25D1AE9C00FC2AF3 /* ImagePickerController.swift in Sources */,
 				5BFBEC2B25D19D7900FC2AF3 /* SelectedMode.swift in Sources */,
 				5B0D409B25CF41B3003E13D4 /* Alert.swift in Sources */,
 				5B0D409E25CF4201003E13D4 /* Animation.swift in Sources */,
 				5B5DD83A25CC7C6000F162CA /* Manager.swift in Sources */,
+				5B969D3225D521C100042EB7 /* GridCollectionViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,85 +7,53 @@
 
 import UIKit
 
-class SavedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class SavedViewController: UIViewController {
         
     // MARK: - Outlets
     
     var collectionView: UICollectionView?
-    
     var titleLabel: UILabel!
+    var source = CityListGridCollectionViewDataSource()
     
     // MARK: - Properties
     
     var manager = Manager.shared
     var datas: [Datas] = []
-    var imagesString: [String] = []
+    let createSavedViewOutlets = CreateSavedViewOutlets()
 
     // MARK: - View life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         datas = manager.getData()
-                
-        let createSavedViewOutlets = CreateSavedViewOutlets()
-        
+                                
         createSavedViewOutlets.implementOutlets(vc: self)
+                
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        implementCollectionView()
-    }
-    
-    // MARK: - CollectionView
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        imagesString.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
+        bind(to: source)
+        createSavedViewOutlets.implementCollectionView(vc: self)
         
-        imagesString.enumerated().forEach { (index, item) in
-            guard let image = item.toImage() else { return }
-            cell.configure(text: "Photo \(indexPath.row)", image: image)
-        }
-    
-        return cell
+        guard let collectionView = collectionView else { return }
+
+        collectionView.dataSource = source
+        collectionView.delegate = source
     }
+    
+    
+    // MARK: - Private Functions
+
+    private func bind(to source: CityListGridCollectionViewDataSource) {
+        source.update(datas: manager.getData())
+    }
+    
     
     // MARK: - Action
 
     
-    // MARK: - Private Functions
-    
-    private func implementCollectionView() {
-        datas = manager.getData()
-
-        guard let data = datas.first else { return }
-        imagesString = data.imageText
-
-        let outlets = Outlets()
-
-        let layoutFrame = CGSize(width: view.frame.size.width, height: view.frame.size.height * 0.8)
-        
-        let layout = outlets.returnLayout(frame: layoutFrame)
-        
-        let collectionViewFrame = CGRect(x: Double(0), y: Double(view.frame.size.width * 0.35), width: Double(view.frame.size.width), height: Double(view.frame.size.height * 0.8))
-        
-        collectionView = UICollectionView(frame: collectionViewFrame,
-                                          collectionViewLayout: layout)
-        
-        guard let collectionView = collectionView else { return }
-        
-        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-                
-        view.addSubview(collectionView)
-        collectionView.backgroundColor = Constants.blueLight
-    }
 
     // MARK: - File private
 

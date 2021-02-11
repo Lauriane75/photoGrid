@@ -52,12 +52,23 @@ class Outlets {
         return label
     }
     
-    func returnImageView(image: UIImage, view: UIView) -> UIImageView {
+    func returnImageViewWithImage(image: UIImage, view: UIView) -> UIImageView {
         let imageView: UIImageView = {
             let imageView = UIImageView()
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.image = image
             
+            return imageView
+        }()
+        view.addSubview(imageView)
+        return imageView
+    }
+    
+    func returnImageView(view: UIView) -> UIImageView {
+        let imageView: UIImageView = {
+            let imageView = UIImageView()
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+
             return imageView
         }()
         view.addSubview(imageView)
@@ -78,13 +89,13 @@ class Outlets {
         return button
     }
     
-    func returnCollectionView(background: UIColor, view: UIView, frame: CGRect) -> UICollectionView {
+    func returnCollectionView(background: UIColor, view: UIView, frame: CGRect, layout: UICollectionViewFlowLayout) -> UICollectionView {
         let collectionView: UICollectionView = {
-            let collectionView = UICollectionView()
+            let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
             collectionView.backgroundColor = background
             collectionView.translatesAutoresizingMaskIntoConstraints = false
-            collectionView.frame = frame
-
+            collectionView.register(GridCollectionViewCell.self, forCellWithReuseIdentifier: GridCollectionViewCell.identifier)
+            
             return collectionView
         }()
         view.addSubview(collectionView)

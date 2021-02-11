@@ -10,7 +10,6 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-
     override func viewDidLoad() {
     
         super.viewDidLoad()
@@ -21,7 +20,7 @@ class TabBarController: UITabBarController {
                 
         firstViewController.tabBarItem = tabBarItem1
         
-        let tabBarItem2 = UITabBarItem(title: "Saved", image: UIImage(systemName: "square.and.arrow.down"), tag: 0)
+        let tabBarItem2 = UITabBarItem(title: "Saved", image: UIImage(systemName: "square.and.arrow.down"), tag: 1)
         
         let secondViewController = SavedViewController()
 

@@ -24,7 +24,7 @@ class CreateHomeViewOutlets {
         constraints.titleLabelConstraints(label: vc.titleLabel, view: vc.view)
         
         // Arrow
-        vc.arrowUpImageView = custom.returnImageView(image: Constants.arrowUpImage, view: vc.view)
+        vc.arrowUpImageView = custom.returnImageViewWithImage(image: Constants.arrowUpImage, view: vc.view)
         constraints.arrowUpImageViewConstraints(arrowUpImageView: vc.arrowUpImageView, titleLabel: vc.titleLabel, view: vc.view)
         
         // Swipe up
@@ -82,21 +82,21 @@ class CreateHomeViewOutlets {
         vc.mode1Button = custom.returnButton(image: Constants.selected1Image, background: .clear, view: vc.view)
         vc.mode1Button.addTarget(self, action: #selector(vc.didSelectMode1Button), for: .touchUpInside)
         constraints.mode1ButtonConstraints(mode1Button: vc.mode1Button, selectedModeHStackView: vc.selectedModeHStackView)
-        vc.mode1SelectionImageView = custom.returnImageView(image: Constants.selection, view: vc.view)
+        vc.mode1SelectionImageView = custom.returnImageViewWithImage(image: Constants.selection, view: vc.view)
         constraints.selectionImageViewConstraints(selectionImageView: vc.mode1SelectionImageView, modeButton: vc.mode1Button)
 
         // mode2Button
         vc.mode2Button = custom.returnButton(image: Constants.selected2Image, background: .clear, view: vc.view)
         vc.mode2Button.addTarget(self, action: #selector(vc.didSelectMode2Button), for: .touchUpInside)
         constraints.mode2ButtonConstraints(mode2Button: vc.mode2Button, selectedModeHStackView: vc.selectedModeHStackView)
-        vc.mode2SelectionImageView = custom.returnImageView(image: Constants.selection, view: vc.view)
+        vc.mode2SelectionImageView = custom.returnImageViewWithImage(image: Constants.selection, view: vc.view)
         constraints.selectionImageViewConstraints(selectionImageView: vc.mode2SelectionImageView, modeButton: vc.mode2Button)
 
         // mode3Button
         vc.mode3Button = custom.returnButton(image: Constants.selected3Image, background: .clear, view: vc.view)
         vc.mode3Button.addTarget(self, action: #selector(vc.didSelectMode3Button), for: .touchUpInside)
         constraints.mode3ButtonConstraints(mode3Button: vc.mode3Button, selectedModeHStackView: vc.selectedModeHStackView)
-        vc.mode3SelectionImageView = custom.returnImageView(image: Constants.selection, view: vc.view)
+        vc.mode3SelectionImageView = custom.returnImageViewWithImage(image: Constants.selection, view: vc.view)
         constraints.selectionImageViewConstraints(selectionImageView: vc.mode3SelectionImageView, modeButton: vc.mode3Button)
     }
 }

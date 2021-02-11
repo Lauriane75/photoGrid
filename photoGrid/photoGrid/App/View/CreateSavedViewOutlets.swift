@@ -10,10 +10,10 @@ import Foundation
 
 class CreateSavedViewOutlets {
     
+    let outlets = Outlets()
+    let constraints = Constraints()
+    
     func implementOutlets(vc: SavedViewController) {
-
-        let outlets = Outlets()
-        let constraints = Constraints()
         
         guard let data = vc.datas.first else { return }
         
@@ -22,5 +22,18 @@ class CreateSavedViewOutlets {
         // Title
         vc.titleLabel = outlets.returnLabel(font: Constants.thirstySoftRegular, text: data.title, view: vc.view)
         constraints.titleLabelConstraints(label: vc.titleLabel, view: vc.view)
+    }
+    
+    func implementCollectionView(vc: SavedViewController) {
+
+        let outlets = Outlets()
+
+        let layoutFrame = constraints.returnlayoutFrame(view: vc.view)
+        
+        let layout = outlets.returnLayout(frame: layoutFrame)
+        
+        let collectionViewFrame = constraints.returnCollectionViewFrame(view: vc.view)
+        
+        vc.collectionView = outlets.returnCollectionView(background: Constants.blueLight, view: vc.view, frame: collectionViewFrame, layout: layout)
     }
 }
